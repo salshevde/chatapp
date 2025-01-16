@@ -1,6 +1,0 @@
-redis
-channels
-daphne
-DJANGO_SETTINGS_MODULE=chatapp.settings daphne -b 0.0.0.0 -p 8000 chatapp.asgi:application
-sudo service redis-server start
-pip install channels channels_redis
