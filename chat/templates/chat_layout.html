@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Chat Application
+{% endblock %}
+
+{% block user-icon %}
+Sign In
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/chat_layout.css' %}">
+
+
+    <aside class="left-menu" id="left-menu">
+
+        {% comment %} <input type="text" name="search-chats" id="search-chats" placeholder="Search chats..."> {% endcomment %}
+
+        {% block left-menu %}
+        User list
+        {% endblock %}
+    </aside>
+
+    <main>
+        {% block chat_content %}
+        main content
+        {% endblock %}
+    </main>
+
+    <aside class="right-menu" id="right-menu">
+        {% block right-menu %}
+        No chat selected
+        {% endblock %}
+    </aside>
+
+
+
+    <script src="{% static 'js/chats.js' %}"></script>
+
+{% endblock %}
+<footer>Footer content</footer>
+</body>
+
+</html>

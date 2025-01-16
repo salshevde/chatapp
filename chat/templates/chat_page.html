@@ -1,0 +1,44 @@
+
+{% extends 'chat.html' %}
+{% load static %}
+{% block chat_content %}
+<link rel="stylesheet" href="{% static 'css/message.css' %}">
+
+<div class="chat-navbar" id ="chat-navbar" data-chat-slug="{{chat.slug}}" data-username="{{user.username}}">
+    <h1>{{ chat.title }}</h1>
+    
+</div>
+
+<div class="messages-container" id="messages-container">
+    {% for msg in messages %}   
+    <div class="{% if msg.sender.username != user.username %}message{% else %}user-message{% endif %}">
+        <strong>{{msg.sender.username}}:</strong>
+        <p>{{msg.content}}</p>
+        <small>{{msg.timestamp}}</small>
+    </div>
+
+    {% empty %}
+    <p>No messages in this chat yet.</p>
+    {% endfor %}
+
+</div>
+<div class="chat-input">
+    <input type="text" name="chat-text-input" id="chat-text-input" placeholder="Type your message...">
+    <button class="send-chat-btn" id='send-chat-btn'>Send</button>
+</div>
+
+<script src="{% static 'js/message.js' %}"></script>
+{% endblock %}
+
+{% block right-menu %}
+<h2>Chart Participahnts</h2>
+
+<ul>
+    {% for user in chat.participants.all %}
+    <li>{{ user.username }}</li>
+    {% endfor %}
+</ul>
+
+<p>Created on: {{ chat.created_at }}</p>
+{% endblock %}
+

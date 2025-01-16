@@ -1,0 +1,7 @@
+python manage.py startapp chat
+settings>installed_apps
+urls+urls main
+
+ADD PROFILE PIC TO CHAT/MODELS ( some cloud upload)
+FRIENDS
+fallback img

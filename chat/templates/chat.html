@@ -1,0 +1,46 @@
+{% extends 'chat_layout.html' %}
+
+{% block title %}
+{{chat.title}}
+{% endblock %}
+
+{% block left-menu %}
+{% comment %} Chats List {% endcomment %}
+
+<button class="toggle-btn" onClick="toggleSection('chats-list')">Groups</button>
+        
+{% for chat in chats %}
+<article class="sidebar-chat collapse" id="chats-list">
+    <a href="{% url 'chat:chat_page' chat.slug %}">
+        <h2>{{chat.title}}</h2>
+    </a>
+</article>
+
+
+
+{% endfor %}
+{% comment %} Users {% endcomment %}
+<button class="toggle-btn" onClick="toggleSection('users-list')">Users</button>
+        
+<article class="sidebar-chat collapse" id="users-list">
+
+    {% for user in users %}
+    <a href="{% url 'chat:start_chat' user.id %}">
+        <h2>{{user.username}}</h2>
+    </a>
+    {% endfor %}
+
+</article>
+
+{% endblock %}
+
+{% block chat_content %}
+<div class="welcome-message">
+    <h1>Welcome to Chat</h1>
+    <p>Select a user or existing chat to being messaging</p>
+</div>
+{% endblock %}
+
+{% block right-menu %}
+No chat selected
+{% endblock %}

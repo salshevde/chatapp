@@ -1,0 +1,114 @@
+:root{
+    --sky-purple:#b67bdb;
+    --light-purple:#6a3f9e;
+    --deep-purple:#2e1a47;
+    --incoming-color:#3e1f66;
+    --outgoing-color:#6a3f9e;
+}
+.chat-navbar{
+    background-color: var(--deep-purple);
+    color:white;
+    padding:20px;
+    text-align: center;
+    border-bottom: 3px solid var((--light-purple));
+}
+
+.messages-container{
+    padding: 10px;
+    overflow-y: auto; /*scroll*/
+    gap: 10px;
+    height: calc(100vh - var(--navbar-height) - 80px);
+    padding-bottom: 60px;
+    border: 1px solid var(--light-purple);
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.message{
+    background-color: var(--incoming-color);
+    color:#ddd;
+    margin:10px 0;
+    padding:10px;
+    border-radius: 10px;
+    align-self: flex-start;
+}
+
+.user-message{
+    background-color: var(--outgoing-color);
+    color:white;
+    margin:10px 0;
+    padding:10px;
+    align-self: flex-end;
+    border-radius: 10px;   
+}
+
+strong{
+    color:var(--sky-purple);
+}
+
+small{
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color:var(--sky-purple);
+}
+
+.chat-input{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--deep-purple);
+    border-top: 2px solid var(--light-purple);
+}
+
+#chat-text-input{
+    width: 80%;
+    padding: 10px;
+    background-color: var(--outgoing-color);
+    border: 1px solid var(--deep-purple);
+    border-radius: 5px;
+    color:white;
+    font-size: 16px;
+
+}
+
+#send-chat-btn{
+    width: 15%;
+    background-color: var(--light-purple);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ASLJghsdgsdh */
+#send-chat-btn:hover {
+    background-color: #b67bdb; /* Light purple on hover */
+}
+
+/* Right menu (participants list) */
+#right-menu {
+    background-color: #2e1a47;
+    padding: 20px;
+    color: white;
+    border-left: 3px solid #6a3f9e;
+    height: 100%;
+}
+
+#right-menu h2 {
+    margin-bottom: 10px;
+}
+
+#right-menu ul {
+    list-style-type: none;
+}
+
+#right-menu ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #6a3f9e;
+}
+
