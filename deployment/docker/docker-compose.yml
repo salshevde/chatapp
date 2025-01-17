@@ -33,7 +33,7 @@ services:
     volumes:
       - ./static:/app/static
       - ./media:/app/media
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./deployment/docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro  # Added ':ro' for read-only
     depends_on:
       - web
     networks:
