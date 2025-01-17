@@ -18,7 +18,7 @@
     <nav>
         <button onclick="collapseLeftMenu()">{% block hamburger_icon %}{%endblock%}</button>
         
-        <a href="/admin">admin</a>
+        {% comment %} <a href="/admin">admin</a> {% endcomment %}
         {% if user.is_authenticated %}
         <a href="{% url 'chat:chat' %}">CHAT</a>
         <form class="logout" action="{% url 'users:logout' %}" method='post'>
