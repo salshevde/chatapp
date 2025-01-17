@@ -15,7 +15,7 @@ Ensure you have the following installed:
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/your-repository/chatapp.git
+git clone https://github.com/salshevde/chatapp.git
 cd chatapp
 ```
 
