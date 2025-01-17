@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["3.111.67.65",'localhost']
 
 
 # Application definition
@@ -50,7 +50,7 @@ CHANNEL_LAYERS = {
     'default':{
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG':{
-            "hosts":[('localhost',6379)]
+            "hosts":[(os.getenv("REDIS_HOST",'redis'),6379)]
         }
     }
 }
