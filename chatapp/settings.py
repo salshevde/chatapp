@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["3.111.67.65",'localhost']
+ALLOWED_HOSTS = ["3.111.67.65","https://ec2-3-111-67-65.ap-south-1.compute.amazonaws.com/",'localhost']
 
 
 # Application definition
@@ -135,7 +135,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'chat/static'),
+    os.path.join(BASE_DIR,'users/static'),
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
