@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 DEBUG = False
 
 ALLOWED_HOSTS = ["3.111.67.65","https://ec2-3-111-67-65.ap-south-1.compute.amazonaws.com/",'localhost']
-
+# CSRF_TRUSTED_ORIGINS = ['https://your_domain.com']
 
 # Application definition
 
@@ -50,10 +50,11 @@ CHANNEL_LAYERS = {
     'default':{
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG':{
-            "hosts":[(os.getenv("REDIS_HOST",'redis'),6379)]
+            "hosts":[(os.getenv("redis-cluster-chatapp-90north-gavrsi.serverless.aps1.cache.amazonaws.com:6379",'redis'),6379)]
         }
     }
 }
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
