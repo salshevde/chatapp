@@ -50,7 +50,7 @@ CHANNEL_LAYERS = {
     'default':{
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG':{
-            "hosts":[('redis-cluster-chatapp-90north-gavrsi.serverless.aps1.cache.amazonaws.com',6379)]
+            "hosts":[(os.getenv("REDIS_HOST",'redis'),6379)]
         }
     }
 }
