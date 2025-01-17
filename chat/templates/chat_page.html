@@ -1,14 +1,18 @@
-
 {% extends 'chat.html' %}
 {% load static %}
+
+{% block title %}
+{{chat.title}}
+{% endblock %}
+
 {% block chat_content %}
 <link rel="stylesheet" href="{% static 'css/message.css' %}">
 
 <div class="chat-navbar" id ="chat-navbar" data-chat-slug="{{chat.slug}}" data-username="{{user.username}}">
     <h1>{{ chat.title }}</h1>
-    
 </div>
 
+<div class="chat-container">
 <div class="messages-container" id="messages-container">
     {% for msg in messages %}   
     <div class="{% if msg.sender.username != user.username %}message{% else %}user-message{% endif %}">
@@ -18,7 +22,7 @@
     </div>
 
     {% empty %}
-    <p>No messages in this chat yet.</p>
+    <p id="empty-msg">No messages in this chat yet.</p>
     {% endfor %}
 
 </div>
@@ -27,6 +31,7 @@
     <button class="send-chat-btn" id='send-chat-btn'>Send</button>
 </div>
 
+</div>
 <script src="{% static 'js/message.js' %}"></script>
 {% endblock %}
 

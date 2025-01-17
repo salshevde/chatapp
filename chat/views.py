@@ -37,3 +37,7 @@ def chat_page(request,slug):
     chats = Chat.objects.filter(participants=request.user).filter(chat_type="group")
     messages = Message.objects.filter(chat=chat).order_by('timestamp')
     return render(request,'chat_page.html',{'chat':chat,'users':users,'messages':messages,'chats': chats})
+
+# @login_required(login_url="/users/login")
+# def create_group(request,slug):
+#     chat = Chat.objects.get(slug=slug)

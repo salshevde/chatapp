@@ -16,7 +16,7 @@
 
 <body>
     <nav>
-        <button onclick="collapseLeftMenu()">☰</button>
+        <button onclick="collapseLeftMenu()">{% block hamburger_icon %}{%endblock%}</button>
         
         <a href="/admin">admin</a>
         {% if user.is_authenticated %}

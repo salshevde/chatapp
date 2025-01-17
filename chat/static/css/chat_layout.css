@@ -14,6 +14,7 @@
     color: #9a5aff; /* Purple accent */
 }
 
+
 .sidebar-chat {
     background: #24243e; 
     padding: 10px;
@@ -63,12 +64,32 @@
 }
 
 /* Style for Buttons */
+
+.groups-list{
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: larger;
+}
+.add-grp {
+    background-color: #9a5aff;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 15%;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 .toggle-btn {
     background-color: #9a5aff;
     color: white;
     border: none;
     padding: 10px;
-    width: 100%;
+    width: 80%;
     text-align: left;
     font-size: 16px;
     cursor: pointer;
@@ -77,6 +98,9 @@
     transition: 0.3s;
 }
 
+.toggle-btn.users{
+    width: 100%;
+}
 .toggle-btn:hover {
     background-color: #b782ff;
 }
@@ -86,3 +110,30 @@
     display: none;
 }
 
+/* Welcome Message */
+.welcome-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    background: #24243e; /* Purple gradient background */
+    color: white;
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-message h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #f2e7ff; /* Soft light purple for the heading */
+}
+
+.welcome-message p {
+    font-size: 1.2rem;
+    color: #e0c8e2; /* Light purple text */
+    max-width: 600px;
+    line-height: 1.5;
+}

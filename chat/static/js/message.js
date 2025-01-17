@@ -12,6 +12,11 @@ const sendButton = document.getElementById('send-chat-btn')
 chatSocket.onmessage = function(e){
     const data = JSON.parse(e.data)
 
+    const noMsgDiv = document.getElementById('empty-msg')
+    console.log(noMsgDiv)
+    if(noMsgDiv && noMsgDiv.innerText.trim() === "No messages in this chat yet."){
+        noMsgDiv.remove()
+    }
     const messageDiv = document.createElement('div')
 
     messageDiv.className = data.username === username ? 'user-message': 'message';
@@ -28,6 +33,7 @@ chatSocket.onmessage = function(e){
 chatSocket.onclose = function(e){
     console.error('Chat socket closed unexpectedly');
 }
+
 
 function sendMessage(){
     const message = chatInput.value.trim();

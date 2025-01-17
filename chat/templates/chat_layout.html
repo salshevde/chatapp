@@ -5,9 +5,9 @@
 Chat Application
 {% endblock %}
 
-{% block user-icon %}
-Sign In
-{% endblock %}
+{% block hamburger_icon %}
+☰
+{%endblock%}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/chat_layout.css' %}">
@@ -24,7 +24,6 @@ Sign In
 
     <main>
         {% block chat_content %}
-        main content
         {% endblock %}
     </main>
 

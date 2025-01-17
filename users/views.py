@@ -1,6 +1,8 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login ,logout
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def register_user(request):
     if request.method == "POST":
@@ -25,17 +27,13 @@ def login_user(request):
         form = AuthenticationForm()
     return render(request,'login.html',{"form": form})
 
+@login_required(login_url="/users/login")
 def logout_user(request):
     if request.method == "POST":
         logout(request)
-        return redirect("chat:chat")
+        return redirect("users:login")
 
+@login_required(login_url="/users/login")
 def profile(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("chat:chats")
-    else:
-        form = UserCreationForm()
-    return render(request,'register.html',{"form": form})
+    user = request.user
+    return render(request,'profile.html',{'user':user})

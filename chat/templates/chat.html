@@ -6,23 +6,25 @@
 
 {% block left-menu %}
 {% comment %} Chats List {% endcomment %}
-
-<button class="toggle-btn" onClick="toggleSection('chats-list')">Groups</button>
-        
-{% for chat in chats %}
-<article class="sidebar-chat collapse" id="chats-list">
+{% comment %} 
+<div class="groups-list">
+<button class="toggle-btn" onClick="toggleSection('chats-list')">Groups </button><button class="add-grp" onClick="">+</button>
+</div>
+<article class="sidebar-chat" id="chats-list">
+    {% for chat in chats %}
     <a href="{% url 'chat:chat_page' chat.slug %}">
         <h2>{{chat.title}}</h2>
     </a>
-</article>
+    {% endfor %}
+
+</article> {% endcomment %}
 
 
 
-{% endfor %}
 {% comment %} Users {% endcomment %}
-<button class="toggle-btn" onClick="toggleSection('users-list')">Users</button>
+<button class="toggle-btn users" onClick="toggleSection('users-list')">Users</button>
         
-<article class="sidebar-chat collapse" id="users-list">
+<article class="sidebar-chat" id="users-list">
 
     {% for user in users %}
     <a href="{% url 'chat:start_chat' user.id %}">
@@ -37,7 +39,7 @@
 {% block chat_content %}
 <div class="welcome-message">
     <h1>Welcome to Chat</h1>
-    <p>Select a user or existing chat to being messaging</p>
+    <p>Select a user to begin messaging</p>
 </div>
 {% endblock %}
 

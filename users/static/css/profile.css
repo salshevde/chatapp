@@ -1,0 +1,49 @@
+/* Profile Page Styling */
+.profile-container {
+    background-color: #2e1a47; /* Deep Purple */
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container h1 {
+    text-align: center;
+    color: #b67bdb; /* Light Purple */
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    font-size: 18px;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+.profile-actions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.profile-actions .btn {
+    display: inline-block;
+    background-color: #b67bdb;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.profile-actions .btn:hover {
+    background-color: #9a5aff; /* Light Purple on hover */
+}
+
+.profile-actions .btn:active {
+    background-color: #6a3f9e; /* Darker Purple when clicked */
+}
