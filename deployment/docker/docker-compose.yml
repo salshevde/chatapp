@@ -12,7 +12,7 @@ services:
       # - DATABASE_URL=postgres://user:password@db:5432/dbname
     depends_on:
       - redis
-      - db
+      # - db
 
   redis:
     image: redis:7-alpine
