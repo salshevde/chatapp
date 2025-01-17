@@ -25,8 +25,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+ALLOWED_HOSTS = ["3.111.67.65", "ec2-3-111-67-65.ap-south-1.compute.amazonaws.com", "localhost"]
 
-ALLOWED_HOSTS = ["3.111.67.65","https://ec2-3-111-67-65.ap-south-1.compute.amazonaws.com/",'localhost']
 # CSRF_TRUSTED_ORIGINS = ['https://your_domain.com']
 
 # Application definition
