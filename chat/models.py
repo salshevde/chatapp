@@ -44,7 +44,6 @@ class Chat(models.Model):
 
         if self.title == "__default__" and not title:
             particpant_names= ",".join(user.username for user in self.participants.all())
-            print(self.participants.all())
             self.title = f"Chat between: {particpant_names}"
             self.save(update_fields=["title"])
 

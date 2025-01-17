@@ -29,7 +29,6 @@ function collapseLeftMenu(){
     const container = document.querySelector('.container');
     leftmenu.classList.toggle('collapsed')
     container.classList.toggle('collapsed-menu')
-    console.log(leftmenu.classList)
 }
 function toggleInFilter(){
     const individual = document.querySelector('.filter-chat-btn.in')

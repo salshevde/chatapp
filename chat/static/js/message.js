@@ -13,7 +13,6 @@ chatSocket.onmessage = function(e){
     const data = JSON.parse(e.data)
 
     const noMsgDiv = document.getElementById('empty-msg')
-    console.log(noMsgDiv)
     if(noMsgDiv && noMsgDiv.innerText.trim() === "No messages in this chat yet."){
         noMsgDiv.remove()
     }
