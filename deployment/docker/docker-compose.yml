@@ -2,7 +2,9 @@ version: '3.8'
 
 services:
   web:
-    build: ../..
+    build: 
+      context: ../..  # Path to root directory
+      dockerfile: deployment/Dockerfile  # Path to Dockerfile from context
     command: daphne -b 0.0.0.0 -p 8000 chatapp.asgi:application
     volumes:
       - ../..:/app
